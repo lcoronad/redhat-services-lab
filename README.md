@@ -38,6 +38,8 @@ cd redhat-services-lab
 
 mvn clean package -DskipTests=true
 
+cp target/consulta-saldo*.jar despliegue/lib
+
 ```
 Si el proyecto ya esta creado se puede omitir este paso
 ```
@@ -46,19 +48,13 @@ oc new-project integration-services-lab --display-name="Lab Servicios"
 
 oc project integration-services-lab
 
-oc create -f despliegue/configmap-consulta-saldo.yml -n integration-services-lab
+cd despliegue
 
-oc new-build --binary=true --name=consulta-saldo openshift/java:8 -n integration-services-lab
+oc create -f configmap-consulta-saldo.yml -n integration-services-lab
 
-oc new-app integration-services-lab/consulta-saldo:latest --name=consulta-saldo --allow-missing-imagestream-tags=true -n integration-services-lab
+oc new-app --name=consulta-saldo --strategy docker ./ -n integration-services-lab
 
-oc set triggers dc/consulta-saldo --remove-all -n integration-services-lab
-
-oc expose dc consulta-saldo --port 8080 -n integration-services-lab
-
-oc start-build consulta-saldo --from-file=target/consulta-saldo-0.0.1-SNAPSHOT.jar --wait=true -n integration-services-lab
-
-oc rollout latest dc/consulta-saldo -n integration-services-lab
+oc start-build consulta-saldo --from-dir ./ -n integration-services-lab
 
 oc expose svc consulta-saldo -n integration-services-lab
 
