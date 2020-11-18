@@ -38,6 +38,8 @@ cd redhat-services-lab
 
 mvn clean package -DskipTests=true
 
+mkdir despliegue/lib
+
 cp target/consulta-saldo*.jar despliegue/lib
 
 ```
