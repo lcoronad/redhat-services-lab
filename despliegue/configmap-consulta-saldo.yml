@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: configmap-consulta-saldo
+data: 
+  server.address: "0.0.0.0"
+  server.port: "8080"
+  management.address: "0.0.0.0"
+  management.port: "8081"
+  management.security.enabled: "false"
+  endpoints.enabled: "true"
+  endpoints.info.sensitive: "false"
+  endpoints.health.enabled: "false"
+  logging.level.co.com.redhat.integration.consultaSaldoGateway: "DEBUG"
+  logging.level.root: "INFO"
