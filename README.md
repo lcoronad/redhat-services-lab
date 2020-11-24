@@ -77,7 +77,7 @@ cd despliegue
 
 > Crear el config map con la parametrización
 ```
-oc create -f configmap-consulta-saldo.yml -n integration-services-lab
+oc create -f yml/configmap-consulta-saldo.yml -n integration-services-lab
 ```
 
 > Se crea la aplicación indicando que es por docket
@@ -88,6 +88,11 @@ oc new-app --name=consulta-saldo --strategy docker ./ -n integration-services-la
 > Se inicia el build indicando la carpeta donde esta el archivo dockerfile y el jar generado
 ```
 oc start-build consulta-saldo --from-dir ./ -n integration-services-lab
+```
+
+> Se actualiza el deployment
+```
+oc apply -f yml/deployment.yaml
 ```
 
 > Se expone la ruta
