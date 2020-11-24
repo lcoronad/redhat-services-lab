@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.math.BigDecimal;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,17 +22,17 @@ import co.com.redhat.integration.consulta.saldo.model.ConsultaSaldoResponse;
 @RunWith(SpringRunner.class)
 @Configuration
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, properties = { "server.port=8080" })
-class ConsultaSaldoApplicationTests {
+public class ConsultaSaldoApplicationTests {
 
 	@Value("${server.port}")
     private String serverPort;
-
+	
     @Autowired
     private TestRestTemplate restTemplate;
     
     private Logger log = LoggerFactory.getLogger(ConsultaSaldoApplicationTests.class);
         
-    @Test       
+    @Test
     public void testConsultarRangosGuias() throws Exception {
         
     	ConsultaSaldoRequest request = new ConsultaSaldoRequest();
