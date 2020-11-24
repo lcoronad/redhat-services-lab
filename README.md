@@ -90,6 +90,11 @@ oc new-app --name=consulta-saldo --strategy docker ./ -n integration-services-la
 oc start-build consulta-saldo --from-dir ./ -n integration-services-lab
 ```
 
+> Se actualiza la versión de la nueva imagen generada, se debe reemplazar **{{VERSION_APP}}** por la versión del artefacto en el pom.xml
+```
+oc tag consulta-saldo:latest consulta-saldo:{{VERSION_APP}} -n integration-services-lab
+```
+
 > Se actualiza el deployment
 ```
 oc apply -f yml/deployment.yml
