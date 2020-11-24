@@ -92,7 +92,7 @@ oc start-build consulta-saldo --from-dir ./ -n integration-services-lab
 
 > Se actualiza el deployment
 ```
-oc apply -f yml/deployment.yaml
+oc apply -f yml/deployment.yml
 ```
 
 > Se expone la ruta
