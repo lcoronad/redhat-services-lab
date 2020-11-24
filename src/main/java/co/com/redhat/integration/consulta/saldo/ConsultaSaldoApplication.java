@@ -1,4 +1,4 @@
-package co.com.redhat.integration.consultaSaldo;
+package co.com.redhat.integration.consulta.saldo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

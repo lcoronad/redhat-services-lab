@@ -1,4 +1,4 @@
-package co.com.redhat.integration.consultaSaldo.rest;
+package co.com.redhat.integration.consulta.saldo.rest;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -6,8 +6,8 @@ import java.util.Date;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.com.redhat.integration.consultaSaldo.model.ConsultaSaldoRequest;
-import co.com.redhat.integration.consultaSaldo.model.ConsultaSaldoResponse;
+import co.com.redhat.integration.consulta.saldo.model.ConsultaSaldoRequest;
+import co.com.redhat.integration.consulta.saldo.model.ConsultaSaldoResponse;
 
 @RestController
 public class ConsultaSaldoController {

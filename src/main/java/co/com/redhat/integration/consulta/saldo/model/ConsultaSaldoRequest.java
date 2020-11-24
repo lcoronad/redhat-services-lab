@@ -1,4 +1,4 @@
-package co.com.redhat.integration.consultaSaldo.model;
+package co.com.redhat.integration.consulta.saldo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
